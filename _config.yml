@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Tolu Atanda"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/chess_head.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "Washington, DC"
   email            :
