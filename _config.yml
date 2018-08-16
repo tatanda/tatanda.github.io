@@ -271,7 +271,7 @@ defaults:
       related: true
 
   #_pages
-  _scope:
+  - scope:
     path: ""
     type: pages
   values:
