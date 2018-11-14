@@ -8,17 +8,21 @@
 @import "minimal-mistakes"; // main partials
 
 html {
-  font-size: 10px; // change to whatever
+  font-size: 6px; // change to whatever
+  font-family: monospace;
 
   @include breakpoint($medium) {
-    font-size: 12px; // change to whatever
+    font-size: 6px; // change to whatever
+    font-family: monospace;
   }
 
   @include breakpoint($large) {
-    font-size: 14px; // change to whatever
+    font-size: 6px; // change to whatever
+    font-family: monospace;
   }
 
   @include breakpoint($x-large) {
-    font-size: 16px; // change to whatever
+    font-size: 6px; // change to whatever
+    font-family: monospace;
   }
 }
