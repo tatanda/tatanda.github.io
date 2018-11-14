@@ -227,8 +227,8 @@ gradient_descent(X_train, y_train, init0s)[0]
 
     array([-6.50232840e-02,  7.15272503e+01,  9.40884410e+01])
 
- So our multivariable linear regression model is
- $$Y = -0.0650232840X_0 + 71.5272503X_1 + 94.0884410X_2$$
+ So our multivariable linear regression model is; <br>
+ $Y$ = -0.0650232840$X_0$ + 71.5272503$X_1$ + 94.0884410$X_2$
 
 *Compare our model's RMSE with Sklearn's*
 
