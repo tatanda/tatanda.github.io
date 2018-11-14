@@ -87,6 +87,8 @@ To do this, we need the partial derivatives of the cosy function wrt each $\thet
 
 $$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$
 
+$\alpha$ is the learning rate which specifies how big a step to take downshill when creating descent. IT must not be too large else the cost won't converge at minimum and it must not be too small else the the model take long to converge.
+
 
 ```python
 def partial_derivs(X, y, init0s): #Returns a list of updated thetas
@@ -229,17 +231,6 @@ gradient_descent(X_train, y_train, init0s)[0]
 
     array([-6.50232840e-02,  7.15272503e+01,  9.40884410e+01])
 
-
-
-Plot the Linear Regression Line of best Fit
-
-
-```python
-X, Y = np.meshgrid(X_train[:,1],X_train[:,2])
-print(y_train[:, np.newaxis].shape)
-```
-
-    (67, 1)
 
 
 *Compute our model's RMSE with Sklearn's*
