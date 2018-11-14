@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/chess_head.jpg"
+  image: ""
 ---
 
  MS Data Science '19 - University of Maryland Baltimore County
