@@ -12,21 +12,21 @@ classes: wide
 ---
 
 
-Linear Regression is a key Machine Learning model that helps to predict a continous variable given one or more independent variables. When there is one continous variable, we have a *Single Variable Linear Regression*. On the other hand, two or more independent variables is called a *Multivariable Linear Regression*.
+<div align = "justify"> Linear Regression is a key Machine Learning model that helps to predict a continous variable given one or more independent variables. When there is one continous variable, we have a *Single Variable Linear Regression*. On the other hand, two or more independent variables is called a *Multivariable Linear Regression*.</div>
 
-While there are out-of-the box algorithms for Linear regression from libraries such as Scikit-Learn, in this post, I attempt to develop a Multivariable Linear Regression from scratch in order to understand the intuition behind such models.
+<div align = "justify"> While there are out-of-the box algorithms for Linear regression from libraries such as Scikit-Learn, in this post, I attempt to develop a Multivariable Linear Regression from scratch in order to understand the intuition behind such models.</div>
 
-LinearRegression models a linear relationship between one dependent and one or more independent variables. This is done by Parametric Learning.
-Parametric learning entails finding the optimal parameter values that fits the linear relationship between variables.
+<div align = "justify"> LinearRegression models a linear relationship between one dependent and one or more independent variables. This is done by Parametric Learning.
+Parametric learning entails finding the optimal parameter values that fits the linear relationship between variables.</div>
 
 The Linear Regression is specified as;
 
  $$Y = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$$
  where $X_0 = 1$
 
-where our hypothesis predicted is $h_{(\theta)}(X)  = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$ and $Y$ is our actual.
+where our prediction hypothesis is $h_{(\theta)}(X)  = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$ and $Y$ is our actual.
 
-The goal of parametric learning is to compute the optimal parameter values that fits the linear relationship between $Y$ and $X_i$.
+<div align = "justify"> The goal of parametric learning is to compute the optimal parameter values that fits the linear relationship between $Y$ and $X_i$.</div>
 
 There are two ways to compute these optimized parameters;
 - Gradient Descent
@@ -40,8 +40,8 @@ A general overview of the process
 - Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using
 the Root Mean Square Error (RMSE)
 
-RMSE is the average of the square differences between our hypothesis predicted values and the actual values.
-It's used as a means to test for model accuracy.
+<div align = "justify"> RMSE is the average of the square differences between our hypothesis predicted values and the actual values.
+It's used as a means to test for model accuracy.</div>
 
 Let's import the important libraries:
 
@@ -57,20 +57,18 @@ from sklearn.metrics import mean_squared_error
 
 ### 1. Gradient Descent
 
-Optimization processes entail one of two things. Either maximize payoff or minimize cost.
+<div align = "justify"> Optimization processes entail one of two things. Either maximize payoff or minimize cost.
 
 Gradient Descent is a general process used to minimize several functions including the cost function. It works by
 initializing the parameter values, calculate the partial derivatives of cost function with respect to the parameters, subtract a
-scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes
-cost function converge at a global minimum.
+scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes cost function converge at a global minimum.</div>
 
-To compute optimized parameter values using Gradient Descent, we have to minimize the cost function.
-In statistics, there are several cost function but the one we'd use is the Squared Error Function which is specified as;
+<div align = "justify"> To compute optimized parameter values using Gradient Descent, we have to minimize the cost function. In statistics, there are several cost function but the one we'd use is the Squared Error Function which is specified as;</div>
 
 $$J_{(\theta)} = \frac{1}{2m} \sum_{i=1}^m (h_{(\theta)}(X^{(i)}) - Y^{(i)})^2$$
 
 
-Since we don't know what the optimized $\theta$ values are, we have to initialize theta values by giving them a value of zeros
+<div align = "justify"> Since we don't know what the optimized $\theta$ values are, we have to initialize theta values by giving them a value of zeros</div>
 
 
 ```python
@@ -80,13 +78,13 @@ def cost_function(X, y, init0s): #Returns the cost value given the theta values.
   return cost
 ```
 
-The goal is to Minimize $J_{(\theta)}$ to give optimized $\theta_j = (\theta_1, \theta_2,..., \theta_n)$ values.
+<div align = "justify"> The goal is to Minimize $J_{(\theta)}$ to give optimized $\theta_j = (\theta_1, \theta_2,..., \theta_n)$ values.</div>
 
-To do this, we need the partial derivatives of the cosy function wrt each $\theta_j$ value.
+<div align = "justify"> To do this, we need the partial derivatives of the cosy function wrt each $\theta_j$ value.</div>
 
 $$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$
 
-$\alpha$ is the learning rate which specifies how big a step to take downshill when creating descent. IT must not be too large else the cost won't converge at minimum and it must not be too small else the the model take long to converge.
+<div align = "justify"> $\alpha$ is the learning rate which specifies how big a step to take downshill when creating descent. IT must not be too large else the cost won't converge at minimum and it must not be too small else the the model take long to converge.</div>
 
 
 ```python
@@ -101,9 +99,8 @@ def partial_derivs(X, y, init0s): #Returns a list of updated thetas
   return updated0s
 ```
 
-We need to keep calculating the partial derivarives of cost function wrt the parameters, subtract a scaled
-value of the partial derivative from the initial parameter until we arrive at the paramter values that makes
-cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant.
+<div align = "justify"> We need to keep calculating the partial derivarives of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes
+cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant. </div>
 
 
 ```python
@@ -191,8 +188,8 @@ X_train, X_test, y_train, y_test = preprocess_data(data)
 
 *Plot the Cost values*
 
-To check that our gradient descent theta values are actually optimized, we have to plot the
-cost values to check for convergence
+<div align = "justify"> To check that our gradient descent theta values are actually optimized, we have to plot the
+cost values to check for convergence</div>
 
 
 ```python
@@ -276,11 +273,11 @@ Our model's RMSE value (0.990820) is comparable to Sklearn's RMSE value (0.99018
 
 ### 2. Normal Equation
 
-The normal equation uses linear algebra to compute the optimal theta values at once.
+<div align = "justify"> The normal equation uses linear algebra to compute the optimal theta values at once.</div>
 
 where $\theta_j = (X^TX)^{-1}X^TY$
 
-The normal equation is useful when number of features is not very large and $(X^TX)$ is invertible. Otherwise, Gradient Descent should be used. With Normal Equation, there is no iteration or initializing of theta values.
+<div align = "justify"> The normal equation is useful when number of features is not very large and $(X^TX)$ is invertible. Otherwise, Gradient Descent should be used. With Normal Equation, there is no iteration or initializing of theta values.</div>
 
 
 
@@ -301,4 +298,4 @@ normal_equation(X_train, y_train)
 
 
 
-We can see that the values for the normal equation are similar to that of gradient descent.
+<div align = "justify"> We can see that the values for the normal equation are similar to that of gradient descent.</div>

@@ -12,7 +12,7 @@ html {
   font-family: monospace;
 
   @include breakpoint($medium) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @include breakpoint($large) {
@@ -20,7 +20,7 @@ html {
   }
 
   @include breakpoint($x-large) {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   -webkit-text-size-adjust: 100%;
