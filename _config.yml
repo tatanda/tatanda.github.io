@@ -12,11 +12,11 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Portfolio Website"
+title                    : "Portfolio"
 title_separator          : "-"
 name                     : "Tolu Atanda"
 description              : "A webpage to showcase Datascience, Machine Learning, and Python related Projects."
@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Tolu Atanda"
-  avatar           : "/assets/images/me.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/me.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "MS Data Science '19 UMBC"
   location         : "Washington, DC"
   email            :

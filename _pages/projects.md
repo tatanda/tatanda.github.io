@@ -1,16 +1,16 @@
 ---
-#layout: archive
+layout: archive
 permalink: /projects/
 #title: "Projects by Tags"
-#author_profile: true
+author_profile: false
 header:
-  image: ""
+  image: #""
 scope:
   path: ""
   type: pages
 values:
-  layout: single
-  author_profile: true
+  #layout: single
+  #author_profile: false
 ---
 {% include base_path %}
 {% include group-by-array collection=site.posts field="tags" %}
