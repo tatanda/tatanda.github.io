@@ -1,5 +1,5 @@
 ---
-title: "Developing a Linear Regression Algorithm"
+title: #"Developing a Linear Regression Algorithm"
 data: 2017-12-20
 tags: [Linear Regression]
 header:
@@ -11,14 +11,14 @@ classes: wide
 
 ---
 
-
+### Developing a Linear Regression Algorithm
 
 Linear Regression is a key Machine Learning model that helps to predict a continous variable given one or more independent variables. When there is one continous variable, we have a *Single Variable Linear Regression*. On the other hand, two or more independent variables is called a *Multivariable Linear Regression*.
 
 While there are out-of-the box algorithms for Linear regression from libraries such as Scikit-Learn, in this post, I attempt to develop a Multivariable Linear Regression from scratch in order to understand the intuition behind such models.
 
-Lienar Regression models a linear relationship between one dependent and one or more independent variables. This is done by Parametric Learning.
-Parametric learning entails finding the optimal parameter values that fits the linear relatioinship between variables.
+LinearRegression models a linear relationship between one dependent and one or more independent variables. This is done by Parametric Learning.
+Parametric learning entails finding the optimal parameter values that fits the linear relationship between variables.
 
 The Linear Regression is specified as;
 
@@ -27,7 +27,7 @@ The Linear Regression is specified as;
 
 where our hypothesis predicted is $h_{(\theta)}(X)  = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$ and $Y$ is our actual.
 
-The goal of parametric learning is to compute the optimal parameter values that fits the linear relatioinship between $Y$ and $X_i$.
+The goal of parametric learning is to compute the optimal parameter values that fits the linear relationship between $Y$ and $X_i$.
 
 There are two ways to compute these optimized parameters;
 - Gradient Descent
@@ -35,7 +35,7 @@ There are two ways to compute these optimized parameters;
 
 
 
-A general obverview of the process
+A general overview of the process
 - Import required libraries
 - Develop model using both Gradient Descent and Normal Equation
 - Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using
@@ -61,9 +61,9 @@ from sklearn.metrics import mean_squared_error
 Optimization processes entail one of two things. Either maximize payoff or minimize cost.
 
 Gradient Descent is a general process used to minimize several functions including the cost function. It works by
-initializing the parameter values, calculate the partial derivarive of cost function wrt the parameters, subtract a
-scaled value of the partial derivative from the initial parameter until we arrive at the paraemter values that makes
-cost fucntion converge at a global minimum.
+initializing the parameter values, calculate the partial derivatives of cost function with respect to the parameters, subtract a
+scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes
+cost function converge at a global minimum.
 
 To compute optimized parameter values using Gradient Descent, we have to minimize the cost function.
 In statistics, there are several cost function but the one we'd use is the Squared Error Function which is specified as;
@@ -71,9 +71,7 @@ In statistics, there are several cost function but the one we'd use is the Squar
 $$J_{(\theta)} = \frac{1}{2m} \sum_{i=1}^m (h_{(\theta)}(X^{(i)}) - Y^{(i)})^2$$
 
 
-Since we don't know what the optimized $\theta$ values are, we have to initialize theis values. we could give
-them a value of zeros
-
+Since we don't know what the optimized $\theta$ values are, we have to initialize theta values by giving them a value of zeros
 
 
 ```python
@@ -96,8 +94,10 @@ def partial_derivs(X, y, init0s): #Returns a list of updated thetas
   m = len(X)
   predicted = (np.transpose(init0s) * X).sum(axis = 1)
   diff = (predicted - y)
-  diff_transpose = np.transpose(diff[:,np.newaxis]) #Add a new axis to make it vectorizable for dot product
-  updated0s = init0s - alpha*((1/m))* np.dot(diff_transpose, X)[0,:] #Remove the extra dimension/axis
+  diff_transpose = np.transpose(diff[:,np.newaxis])
+  #Add a new axis to make it vectorizable for dot product
+  updated0s = init0s - alpha*((1/m))* np.dot(diff_transpose, X)[0,:]
+  #Remove the extra dimension/axis
   return updated0s
 ```
 
@@ -108,7 +108,8 @@ cost function converge at a global minimum. Once the cost converges at minimum, 
 
 ```python
 
-def gradient_descent(X, y,init0s): #Returns the optimal theta value and a list of costs for each iteration
+def gradient_descent(X, y,init0s):
+  #Returns the optimal theta value and a list of costs for each iteration
   costs = [cost_function(X, y,init0s)]
   for i in range(epochs):
     init0s = partial_derivs(X, y,init0s)
