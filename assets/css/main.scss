@@ -9,20 +9,20 @@
 
 html {
   font-size: 6px; // change to whatever
-  font-family: monospace;
+  font-family: Georgia;
 
   @include breakpoint($medium) {
-    font-size: 6px; // change to whatever
-    font-family: monospace;
+    font-size: 8px; // change to whatever
+    font-family: Georgia;
   }
 
   @include breakpoint($large) {
-    font-size: 6px; // change to whatever
-    font-family: monospace;
+    font-size: 10px; // change to whatever
+    font-family: Georgia;
   }
 
   @include breakpoint($x-large) {
-    font-size: 6px; // change to whatever
-    font-family: monospace;
+    font-size: 12px; // change to whatever
+    font-family: Georgia;
   }
 }
