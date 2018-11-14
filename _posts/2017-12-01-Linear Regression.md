@@ -34,7 +34,7 @@ There are two ways to compute these optimized parameters;
 
 
 
-A general overview of the process
+A general overview of the process;
 - Import required libraries
 - Develop model using both Gradient Descent and Normal Equation
 - Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using
@@ -265,7 +265,7 @@ rmse
 
 
 
-Our model's RMSE value (0.990820) is comparable to Sklearn's RMSE value (0.9901820)
+Our model's RMSE value (1.0886519) is comparable to Sklearn's RMSE value (.0886519)
 
 
 
