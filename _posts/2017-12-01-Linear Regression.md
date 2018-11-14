@@ -1,10 +1,11 @@
 ---
 title: "Developing a Linear Regression Model"
 data: 2017-12-20
-tags: [Python, Pandas, Linear Regression, Data Science]
+tags: [Linear Regression]
 header:
-  image: "/images/Developing a Linear Regression Model/cost converge.png"
+  image: ""
   excerpt: "Machine Learning, Linear Regression, Gradient Descent, Data Science"
+classes: wide
 
 ---
 
@@ -31,10 +32,6 @@ There are two ways to compute these optimized parameters;
 - Normal Equation
 
 
-
-```python
-
-```
 
 A general obverview of the process
 - Import required libraries
@@ -119,9 +116,6 @@ def predict(X_test, y_test, optimal0s):
 ```
 
 
-```python
-
-```
 
 Let's test out our Linear Regression model on a dataset
 
@@ -168,9 +162,6 @@ We need to carry out some preprocessing on data.
 - Split the data into Train and Split for Validation
 
 
-```python
-
-```
 
 
 ```python
@@ -211,7 +202,7 @@ plt.plot(x,y)
 
 
 
-![png](output_21_1.png)
+![png](cost converge.png)
 
 
 *Optimal Theta Values*
@@ -276,9 +267,7 @@ rmse
 Our model's RMSE value (0.990820) is comparable to Sklearn's RMSE value (0.9901820)
 
 
-```python
 
-```
 
 
 #### 2. Normal Equation
@@ -307,14 +296,4 @@ normal_equation(X_train, y_train)
 
 
 
-
-```python
-
-```
-
 We can see that the values for the normal equation are similar to that of gradient descent.
-
-
-```python
-
-```
