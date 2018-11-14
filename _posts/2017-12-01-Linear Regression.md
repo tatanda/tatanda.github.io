@@ -21,15 +21,17 @@ Parametric learning entails finding the optimal parameter values that fits the l
 
 The Linear Regression is specified as;
 
- $$Y = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$$
+ $$h_{(\theta)}(X) = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$$
  where $X_0 = 1$
  and;<br>
  $(\theta_0, \theta_1, \theta_2,..., \theta_n)$ are the optimized thetas, <br>
- $(X_0, X_1, X_2,..., X_n)$ are the features or independent variables
+ $(X_1, X_2,..., X_n)$ are the features or independent variables.
 
-where our prediction hypothesis is $h_{(\theta)}(X)  = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$ and $Y$ is our actual.
+where our algorithm learns from our training data and outputs a prediction hypothesis $h_{(\theta)}(X)$ function which is used to predict actual values of $Y$. <br>
+$$Y  = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n +  \epsilon $$
+where $\epsilon$ is the Error term.
 
-<div align = "justify"> The goal of parametric learning is to compute the optimal parameter values that fits the linear relationship between $Y$ and $X_i$.</div>
+<div align = "justify"> The goal of parametric learning is to compute the optimal parameter values that fits the linear relationship between $Y$ and $X_i$ thereby minimizing $\epsilon$.</div>
 
 There are two ways to compute these optimized parameters;
 - Gradient Descent
@@ -40,8 +42,7 @@ There are two ways to compute these optimized parameters;
 A general overview of the process;
 - Import required libraries
 - Develop model using both Gradient Descent and Normal Equation
-- Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using
-the Root Mean Square Error (RMSE)
+- Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using the Root Mean Square Error (RMSE)
 
 <div align = "justify"> RMSE is the average of the square differences between our hypothesis predicted values and the actual values.
 It's used as a means to test for model accuracy.</div>
