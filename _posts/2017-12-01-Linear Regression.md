@@ -74,7 +74,6 @@ Since we don't know what the optimized $\theta$ values are, we have to initializ
 
 
 ```python
-#init0s =
 def cost_function(X, y, init0s): #Returns the cost value given the theta values.
   m = len(X) #m is the length of X i.e the number of samples
   cost = 1/(2*m)*np.sum((np.dot(init0s, np.transpose(X)) - y)**2)
@@ -231,7 +230,8 @@ gradient_descent(X_train, y_train, init0s)[0]
 
     array([-6.50232840e-02,  7.15272503e+01,  9.40884410e+01])
 
-
+ So our multivariable linear regression model is
+ $$Y = -6.50232840e-02X_0 + 7.15272503e+01X_1 + 9.40884410e+01X_2
 
 *Compute our model's RMSE with Sklearn's*
 
