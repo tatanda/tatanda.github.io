@@ -1,7 +1,7 @@
 ---
 title: "Developing a Linear Regression Algorithm"
 data: 2017-12-20
-tags: ["Linear Regression" "Gradient Descent" "Machine Learning"]
+tags: [Linear_Regression]
 header:
   #image: "/assets/images/optics.jpg"
   teaser: /assets/images/cost converge.png
