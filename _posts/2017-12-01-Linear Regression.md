@@ -43,7 +43,7 @@ the Root Mean Square Error (RMSE)
 RMSE is the average of the square differences between our hypothesis predicted values and the actual values.
 It's used as a means to test for model accuracy.
 
-Lets import the important libraries:
+Let's import the important libraries:
 
 
 ```python
@@ -231,9 +231,9 @@ gradient_descent(X_train, y_train, init0s)[0]
     array([-6.50232840e-02,  7.15272503e+01,  9.40884410e+01])
 
  So our multivariable linear regression model is
- $$Y = -6.50232840e-02X_0 + 7.15272503e+01X_1 + 9.40884410e+01X_2
+ $$Y = -6.50232840e-02X_0 + 7.15272503e+01X_1 + 9.40884410e+01X_2$$
 
-*Compute our model's RMSE with Sklearn's*
+*Compare our model's RMSE with Sklearn's*
 
 
 ```python
@@ -280,8 +280,7 @@ The normal equation uses linear algebra to compute the optimal theta values at o
 
 where $\theta_j = (X^TX)^{-1}X^TY$
 
-The normal equation is useful when n is not very large and $(X^TX)$ is invertible. Otherwise,
-Gradient Descent should be used. With Normal Equation, there is no iteration or initializing of theta values.
+The normal equation is useful when number of features is not very large and $(X^TX)$ is invertible. Otherwise, Gradient Descent should be used. With Normal Equation, there is no iteration or initializing of theta values.
 
 
 
