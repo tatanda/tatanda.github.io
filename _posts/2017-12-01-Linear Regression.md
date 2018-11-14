@@ -5,7 +5,7 @@ tags: [Linear Regression]
 header:
   image: ""
   excerpt: "Machine Learning, Linear Regression, Gradient Descent, Data Science"
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 classes: wide
 
 ---
@@ -296,7 +296,7 @@ Gradient Descent should be used. With Normal Equation, there is no iteration or 
 ```python
 def normal_equation(X, y):
   xtrans = np.transpose(X)
-  inv = np.linalg.pinv(np.dot(xtrans, X)) #use pinv for nonivertible singular matrices 
+  inv = np.linalg.pinv(np.dot(xtrans, X)) #use pinv for nonivertible singular matrices
   and use inv for normal invertible matrices
   optimal0s = np.dot(np.dot(inv, xtrans), y)
   return optimal0s
