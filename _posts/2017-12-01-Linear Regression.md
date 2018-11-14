@@ -1,7 +1,7 @@
 ---
 title: "Developing a Linear Regression Algorithm"
 data: 2017-12-20
-tags: ""#[Linear Regression]
+tags: "" #[Linear Regression]
 header:
   #image: "/assets/images/optics.jpg"
   teaser: /assets/images/cost converge.png
@@ -10,7 +10,6 @@ header:
 classes: wide
 
 ---
-
 
 
 Linear Regression is a key Machine Learning model that helps to predict a continous variable given one or more independent variables. When there is one continous variable, we have a *Single Variable Linear Regression*. On the other hand, two or more independent variables is called a *Multivariable Linear Regression*.
