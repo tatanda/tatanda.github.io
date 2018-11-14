@@ -2,7 +2,7 @@
 layout: archive
 permalink: /projects/
 #title: "Projects by Tags"
-author_profile: false
+author_profile: true
 header:
   image: #""
 scope:
