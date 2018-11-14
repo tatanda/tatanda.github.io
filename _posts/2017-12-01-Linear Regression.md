@@ -23,6 +23,9 @@ The Linear Regression is specified as;
 
  $$Y = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$$
  where $X_0 = 1$
+ and;<br>
+ $(\theta_0, \theta_1, \theta_2,..., \theta_n)$ are the optimized thetas, <br>
+ $(X_0, X_1, X_2,..., X_n)$ are the features or independent variables
 
 where our prediction hypothesis is $h_{(\theta)}(X)  = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$ and $Y$ is our actual.
 
@@ -78,7 +81,7 @@ def cost_function(X, y, init0s): #Returns the cost value given the theta values.
   return cost
 ```
 
-<div align = "justify"> The goal is to Minimize $J_{(\theta)}$ to give optimized $\theta_j = (\theta_1, \theta_2,..., \theta_n)$ values.</div>
+<div align = "justify"> The goal is to Minimize $J_{(\theta)}$ to give optimized $\theta_j = (\theta_0, \theta_1, \theta_2,..., \theta_n)$ values.</div>
 
 <div align = "justify"> To do this, we need the partial derivatives of the cosy function wrt each $\theta_j$ value.</div>
 
