@@ -1,13 +1,13 @@
 ---
 layout: archive
 permalink: /projects/
-#title: "Projects by Tags"
+title: "Projects by Tags"
 author_profile: true
 header:
   image: #""
 scope:
   path: ""
-  type: pages
+  #type: pages
 values:
   #layout: single
   #author_profile: false
@@ -17,7 +17,7 @@ values:
 
 {% for tag in group_names %}
   {% assign posts = group_items[forloop.index0] %}
-  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ }}</h2>
   {% for post in posts %}
     {% include archive-single.html %}
   {% endfor %}

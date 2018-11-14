@@ -1,7 +1,7 @@
 ---
 title: "Developing a Linear Regression Algorithm"
 data: 2017-12-20
-tags: Linear Regression
+tags: [Linear Regression]
 header:
   #image: "/assets/images/optics.jpg"
   teaser: /assets/images/cost converge.png
@@ -55,7 +55,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 ```
 
-#### 1. Gradient Descent
+### 1. Gradient Descent
 
 Optimization processes entail one of two things. Either maximize payoff or minimize cost.
 
@@ -283,7 +283,7 @@ Our model's RMSE value (0.990820) is comparable to Sklearn's RMSE value (0.99018
 
 
 
-#### 2. Normal Equation
+### 2. Normal Equation
 
 The normal equation uses linear algebra to compute the optimal theta values at once.
 
