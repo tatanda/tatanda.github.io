@@ -12,7 +12,7 @@ classes: wide
 ---
 
 
-<div align = "justify"> Linear Regression is a key Machine Learning model that helps to predict a continous variable given one or more independent variables. When there is one continous variable, we have a Single Variable Linear Regression. On the other hand, two or more independent variables is called a Multivariable Linear Regression.</div>
+<div align = "justify"> Linear Regression is a key Machine Learning model that helps to predict a continous variable given one or more independent variables (features). When there is one continous variable, we have a Single Variable Linear Regression. On the other hand, two or more independent variables is called a Multivariable Linear Regression.</div>
 
 <div align = "justify"> While there are out-of-the box algorithms for Linear regression from libraries such as Scikit-Learn, in this post, I attempt to develop a Multivariable Linear Regression from scratch in order to understand the intuition behind such models.</div>
 
@@ -265,7 +265,7 @@ rmse
 
 
 
-Our model's RMSE value (1.0886519) is comparable to Sklearn's RMSE value (.0886519)
+Our model's RMSE value (1.0886519) is comparable to Sklearn's RMSE value (1.0886519)
 
 
 
