@@ -9,18 +9,18 @@ html {
   box-sizing: border-box;
   background-color: $background-color;
   font-size: 16px;
-  $global-font-family: monospace;
+  font-family: monospace;
 
   @include breakpoint($medium) {
     font-size: 18px;
   }
 
   @include breakpoint($large) {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   @include breakpoint($x-large) {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   -webkit-text-size-adjust: 100%;
