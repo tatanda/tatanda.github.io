@@ -5,6 +5,7 @@ tags: [Linear Regression]
 header:
   image: ""
   excerpt: "Machine Learning, Linear Regression, Gradient Descent, Data Science"
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 classes: wide
 
 ---
@@ -36,9 +37,11 @@ There are two ways to compute these optimized parameters;
 A general obverview of the process
 - Import required libraries
 - Develop model using both Gradient Descent and Normal Equation
-- Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using the Root Mean Square Error (RMSE)
+- Test Model using both methods on a dataset and compare with Sklearn out-of-the box model using
+the Root Mean Square Error (RMSE)
 
-RMSE is the average of the square differences between our hypothesis predicted values and the actual values. It's used as a means to test for model accuracy.
+RMSE is the average of the square differences between our hypothesis predicted values and the actual values.
+It's used as a means to test for model accuracy.
 
 Lets import the important libraries:
 
@@ -56,7 +59,10 @@ from sklearn.metrics import mean_squared_error
 
 Optimization processes entail one of two things. Either maximize payoff or minimize cost.
 
-Gradient Descent is a general process used to minimize several functions including the cost function. It works by initializing the parameter values, calculate the partial derivarive of cost function wrt the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the paraemter values that makes cost fucntion converge at a global minimum.
+Gradient Descent is a general process used to minimize several functions including the cost function. It works by
+initializing the parameter values, calculate the partial derivarive of cost function wrt the parameters, subtract a
+scaled value of the partial derivative from the initial parameter until we arrive at the paraemter values that makes
+cost fucntion converge at a global minimum.
 
 To compute optimized parameter values using Gradient Descent, we have to minimize the cost function.
 In statistics, there are several cost function but the one we'd use is the Squared Error Function which is specified as;
@@ -64,7 +70,8 @@ In statistics, there are several cost function but the one we'd use is the Squar
 $$J_{(\theta)} = \frac{1}{2m} \sum_{i=1}^m (h_{(\theta)}(X^{(i)}) - Y^{(i)})^2$$
 
 
-Since we don't know what the optimized $\theta$ values are, we have to initialize theis values. we could give them a value of zeros
+Since we don't know what the optimized $\theta$ values are, we have to initialize theis values. we could give
+them a value of zeros
 
 
 
@@ -93,7 +100,9 @@ def partial_derivs(X, y, init0s): #Returns a list of updated thetas
   return updated0s
 ```
 
-We need to keep calculating the partial derivarives of cost function wrt the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the paramter values that makes cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant.
+We need to keep calculating the partial derivarives of cost function wrt the parameters, subtract a scaled
+value of the partial derivative from the initial parameter until we arrive at the paramter values that makes
+cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant.
 
 
 ```python
@@ -143,7 +152,8 @@ print(data)
            [ 1.02867051,  0.69952625],
            [-1.10693866,  0.82899393],
            [ 0.41280868,  0.67398247],
-           [-0.82242226, -1.46872768]]), array([-128.32612235,  156.62936098,  -23.00157862,   13.79748273,
+           [-0.82242226, -1.46872768]]), array([-128.32612235,  156.62936098,  
+            -23.00157862,   13.79748273,
             -59.15950308,  -37.38216146,  -58.42959904,  139.89493792,
             -54.37098522, -155.89579496,  -41.78211416, -197.90237397,
             139.70894371,  -60.19288674,  168.64414418,   85.5834497 ,
@@ -179,7 +189,8 @@ X_train, X_test, y_train, y_test = preprocess_data(data)
 
 *Plot the Cost values*
 
-To check that our gradient descent theta values are actually optimized, we have to plot the cost values to check for convergence
+To check that our gradient descent theta values are actually optimized, we have to plot the
+cost values to check for convergence
 
 
 ```python
@@ -202,7 +213,7 @@ plt.plot(x,y)
 
 
 
-![png](cost converge.png)
+![png](/images/Developing a Linear Regression Model/cost converge.png)
 
 
 *Optimal Theta Values*
@@ -237,7 +248,8 @@ print(y_train[:, np.newaxis].shape)
 epochs = 1000 #Number of Iterations
 alpha = 0.04
 init0s = np.zeros(3)
-predict(X_test, y_test, gradient_descent(X_train, y_train, init0s)[0])[1] #Returns the model RMSE
+predict(X_test, y_test, gradient_descent(X_train, y_train, init0s)[0])[1]
+#Returns the model RMSE
 ```
 
 
@@ -276,14 +288,16 @@ The normal equation uses linear algebra to compute the optimal theta values at o
 
 where $\theta_j = (X^TX)^{-1}X^TY$
 
-The normal equation is useful when n is not very large and $(X^TX)$ is invertible. Otherwise, Gradient Descent should be used. With Normal Equation, there is no iteration or initializing of theta values.
+The normal equation is useful when n is not very large and $(X^TX)$ is invertible. Otherwise,
+Gradient Descent should be used. With Normal Equation, there is no iteration or initializing of theta values.
 
 
 
 ```python
 def normal_equation(X, y):
   xtrans = np.transpose(X)
-  inv = np.linalg.pinv(np.dot(xtrans, X)) #use pinv for nonivertible sungular matrices and use inv for normal invertible matrices
+  inv = np.linalg.pinv(np.dot(xtrans, X)) #use pinv for nonivertible singular matrices 
+  and use inv for normal invertible matrices
   optimal0s = np.dot(np.dot(inv, xtrans), y)
   return optimal0s
 normal_equation(X_train, y_train)
