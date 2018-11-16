@@ -1,7 +1,8 @@
 ---
 title: "Regularized Multiclass Logistic Regression Algorithm"
 data: 2018-01-05
-tags: [Linear Regression]
+tags: [Portfolio]
+Categories: [Logistic Regression]
 layout: single
 header:
   #image: "/assets/images/optics.jpg"
