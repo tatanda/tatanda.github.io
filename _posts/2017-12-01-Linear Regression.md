@@ -4,6 +4,7 @@ data: 2017-12-20
 tags: [Portfolio]
 Categories: [Linear Regression]
 layout: single
+author_profile: true
 header:
   #image: "/assets/images/optics.jpg"
   teaser: /assets/images/cost converge.png
@@ -14,7 +15,7 @@ classes: wide
 ---
 
 
-<div align = "justify"> Linear Regression is a Machine Learning model used to predict a continous variable given one or more independent variables (features). When there is one continous variable, we have a Single Variable Linear Regression. On the other hand, two or more independent variables is called a Multivariable Linear Regression.</div>
+<div align = "justify"> Linear Regression is a Machine Learning model used to predict a continuous variable given one or more independent variables (features). When there is one continuous variable, we have a Single Variable Linear Regression. On the other hand, two or more independent variables is called a Multivariable Linear Regression.</div>
 
 <div align = "justify"> While there are out-of-the box algorithms for Linear regression from libraries such as Scikit-Learn, in this post, I attempt to develop a Multivariable Linear Regression from scratch in order to understand the intuition behind such models.</div>
 
@@ -105,7 +106,7 @@ def partial_derivs(X, y, init0s): #Returns a list of updated thetas
   return updated0s
 ```
 
-<div align = "justify"> We need to keep calculating the partial derivarives of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes
+<div align = "justify"> We need to keep calculating the partial derivatives of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes
 cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant. </div>
 
 
