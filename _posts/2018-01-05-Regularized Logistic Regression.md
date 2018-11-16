@@ -2,6 +2,7 @@
 title: "Regularized Multiclass Logistic Regression Algorithm"
 data: 2018-01-05
 tags: [Logistic Regression], [Gradient Descent]
+layout: post
 header:
   #image: "/assets/images/optics.jpg"
   teaser: /assets/images/logReg.png
