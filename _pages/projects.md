@@ -7,9 +7,9 @@ header:
   image: #""
 scope:
   path: ""
-  #type: pages
+  type: pages
 values:
-  #layout: single
+  layout: single
   #author_profile: false
 ---
 {% include base_path %}
