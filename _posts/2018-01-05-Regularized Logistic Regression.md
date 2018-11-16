@@ -13,7 +13,7 @@ classes: wide
 ---
 
 
-<div align = "justify"> Logistic Regression is a key Classification Machine Learning model  that helps to predict a discrete variable given one or more independent variables. Classification entails assigning a class to each sample based on the learned parameters. </div>
+<div align = "justify"> Logistic Regression is a Classification Machine Learning model used to predict a discrete variable given one or more independent variables. Classification entails assigning a class to each sample based on the learned parameters. </div>
 
 A real life example is; <br>
 Given a symmetrical college classroom where each student sitted in the room is identified by a row and column value, we can develop a logistic regression model to classify whether each student is male or female. This type of classification is called Binary Classification. i.e
