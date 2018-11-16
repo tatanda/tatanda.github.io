@@ -1,6 +1,6 @@
 ---
-title: "Regularized Multiclass Logistic Regression Algorithm"
-data: 2018-01-05
+title: "Regularized Multiclass Logistic Regression Algorithm check"
+data: 2018-02-02
 tags: [Logistic Regression], [Gradient Descent]
 header:
   #image: "/assets/images/optics.jpg"
