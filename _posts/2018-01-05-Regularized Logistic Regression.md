@@ -18,15 +18,15 @@ classes: wide
 <div align = "justify"> Logistic Regression is a Classification Machine Learning model used to predict a discrete variable given one or more independent variables. Classification entails assigning a class to each sample based on the learned parameters. </div>
 
 A real life example is; <br>
-Given a symmetrical college classroom where each student sitted in the room is identified by a row and column value, we can develop a logistic regression model to classify whether each student is male or female. This type of classification is called Binary Classification. i.e
+<div align = "justify">Given a symmetrical college classroom where each student seated in the room is identified by a row and column value, we can develop a logistic regression model to classify whether each student is male or female. This type of classification is called Binary Classification. i.e
 
-$$Y \in 0,1 $$
+$$Y \in 0,1 $$</div>
 
 
-Alternatively, if the class room contains first year, second year, third-year, and fourth year student, we can classify whether each student is year 1, 2, 3, or 4. This type is called Multiclass Logistic Regression. i.e
-$$Y \in 1,2,3,4 $$
+<div align = "justify">Alternatively, if the class room contains first year, second year, third-year, and fourth year student, we can classify whether each student is year 1, 2, 3, or 4. This type is called Multi-class Logistic Regression. i.e
+$$Y \in 1,2,3,4 $$</div>
 
-While there are out-of-the box algorithms for Logistic regression from libraries such as Scikit-Learn, in this post, I'd develop a Multivariable Logistic Regression model (that will also work for Binary Classification) from scratch in order to understand the intuition behind such models.
+<div align = "justify">While there are out-of-the box algorithms for Logistic regression from libraries such as Scikit-Learn, in this post, I'd develop a Multivariable Logistic Regression model (that will also work for Binary Classification) from scratch in order to understand the intuition behind such models.</div>
 
 The Logistic Regression is specified as;
 
@@ -35,23 +35,23 @@ The Logistic Regression is specified as;
  $$h_{(\theta)}(X) = g(\theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n )= g(\theta^TX) \text {  (using vectorized implementation)} $$
  where $X_0 = 1$
 
- We can see that $g(X)$ is similar to a Linear Regression. But our Logistic regression model must output probability values between 0 and 1 which specify probaility of each sample belonging to each class.  To do this, we pass the $g(X)$ into a Sigmoid function $g(z)$;
+ <div align = "justify">We can see that $g(X)$ is similar to a Linear Regression. But our Logistic regression model must output probability values between 0 and 1 which specify probaility of each sample belonging to each class.  To do this, we pass the $g(X)$ into a Sigmoid function $g(z)$;</div>
 
  $$ g(z)= \frac{1}{1 + e^{-z}}$$
  <br>
 
  $$h_{(\theta)}(X) = \frac{1}{1 + e^{-\theta^TX}}$$
 
- For a binary classification, $h_{(\theta)}(X)$ will output the probability that the sample instance is in Class 1. We state a decision boundary that says that if this probability value is $>0.5$, sample is in class 1. Else if the probability value is $<0.5$, sample is in Class 0.
+ <div align = "justify">For a binary classification, $h_{(\theta)}(X)$ will output the probability that the sample instance is in Class 1. We state a decision boundary that says that if this probability value is $>0.5$, sample is in class 1. Else if the probability value is $<0.5$, sample is in Class 0.</div>
 
- This same method is applied in Multi class classification using the One-vs-All. For example, given a data with 4 classes, we'd train 4 different binary classification model, where for each model one class is assigned 1 and the others are assigned 0. At the end of the iteration, each sample instance will output an array of probability values that sum to 1, stating the probability of each sample instance belonging to class 1, 2, 3, and 4 so that the class with the higest probability is predicted.
+ <div align = "justify">This same method is applied in Multi class classification using the One-vs-All. For example, given a data with 4 classes, we'd train 4 different binary classification model, where for each model one class is assigned 1 and the others are assigned 0. At the end of the iteration, each sample instance will output an array of probability values that sum to 1, stating the probability of each sample instance belonging to class 1, 2, 3, and 4 so that the class with the highest probability is predicted.</div>
 
- A key aspect of logistic regressison is defining the decision boundary. The decision boundary is delineated by;
+ A key aspect of logistic regression is defining the decision boundary. The decision boundary is delineated by;
 
  $$\theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n = \theta^TX\text {  (using vectorized implementation)} $$
 Without properly defining the decision boundary, our sigmoid function will output probability values that do not properly classify our sample instances.
 
-Gradient Descent is used to arive at the optimal parameters $\theta_j = (\theta_0, \theta_1, \theta_2,..., \theta_n)$ values which fits our data. Gradient descent works by initializing the parameter values (with zero values), calculate the partial derivarive of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes cost function converge at a global minimum.
+<div align = "justify">Gradient Descent is used to arrive at the optimal parameters $\theta_j = (\theta_0, \theta_1, \theta_2,..., \theta_n)$ values which fits our data. Gradient descent works by initializing the parameter values (with zero values), calculate the partial derivative of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes cost function converge at a global minimum.</div>
 
 
 
@@ -73,10 +73,10 @@ from matplotlib import pyplot as plt
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 ```
-<
-We need a cost function that gives a cost of zero if our model $h_{(\theta)}(X)$
+
+<div align = "justify">We need a cost function that gives a cost of zero if our model $h_{(\theta)}(X)$
 prediction equals $Y$ and gives a cost that ranges to infinity if our model $h_{(\theta)}(X)$ prediction is unequal to the actual $Y$ value.
-A problem that may arise with logistic regression is overfitting. This is when our logistic model predicts well on the training dataset but is unable to perfom well on previously unseen data. This result when there are many features. With regularization, our goal here is to determine the best decision boundary and also avoid overfitting. To do this we'll add a regularization parameter that helps to control the tradeoff between our two different goals.
+A problem that may arise with logistic regression is overfitting. This is when our logistic model predicts well on the training dataset but is unable to perform well on previously unseen data. This result when there are many features. With regularization, our goal here is to determine the best decision boundary and also avoid overfitting. To do this we'll add a regularization parameter that helps to control the tradeoff between our two different goals.</div>
 
 Such cost function is stated as;
 
@@ -104,8 +104,8 @@ def logistic_cost(X_train, y_train, init0s):
 
 The goal is to Minimize $J_{(\theta)}$ to output optimized $\theta_j = (\theta_0,\theta_1, \theta_2,..., \theta_n)$ values.
 
-To do this, we need the partial derivatives of the cost function wrt each $\theta_j$ value.
-Note that the second part of our cost function sums from i = 1 to n. So we'll have a different equation for $\theta_0$ and $(\theta_1, \theta_2,..., \theta_n)$
+<div align = "justify">To do this, we need the partial derivatives of the cost function wrt each $\theta_j$ value.
+Note that the second part of our cost function sums from i = 1 to n. So we'll have a different equation for $\theta_0$ and $(\theta_1, \theta_2,..., \theta_n)$</div>
 
 $$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$
 $$\theta_0 := \theta_0 - \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_0^{(i)}$$
@@ -129,7 +129,7 @@ def partial(X_train, y_train, init0s):
 
 ```
 
-We need to keep calculating the partial derivarives of cost function wrt the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the paramter values that makes cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant.
+<div align = "justify">We need to keep calculating the partial derivatives of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant.</div>
 
 
 ```python
@@ -145,8 +145,8 @@ def gradient_descent(X_train, y_train, init0s):
 
 ```
 
-To implement One-vs-All classification, we have to iterate over each class and replace with 1's and 0's.
-1 for the chosen class and 0 for others
+<div align = "justify">To implement One-vs-All classification, we have to iterate over each class and replace with 1's and 0's.
+1 for the chosen class and 0 for others</div>
 
 
 ```python
@@ -208,7 +208,7 @@ def accuracy_score(prediction, actual):
 
 Let's test our model on a dataset
 
-Our dataset is copy of the test set of the UCI ML hand-written digits datasets containing 8x8 images of integer pixels in the range 0 - 16. The integers range from 0 - 9
+<div align = "justify">Our dataset is copy of the test set of the UCI ML hand-written digits datasets containing 8x8 images of integer pixels in the range 0 - 16. The integers range from 0 - 9</div>
 
 
 ```python
@@ -291,7 +291,7 @@ for index, (image, label) in enumerate(random.sample(images_labels, 12)):
 We need to carry out some preprocessing on data.
 - Add the $X_0$ column with 1's
 - Split the data into Train and Split for Validation
-- #To apply classification on the images, we need to flatten each image, to turn the data into a (n_samples, feature) matrix
+- To apply classification on the images, we need to flatten each image, to turn the data into a (n_samples, feature) matrix
 
 
 ```python
