@@ -104,11 +104,11 @@ def logistic_cost(X_train, y_train, init0s):
 
 The goal is to Minimize $J_{(\theta)}$ to output optimized $\theta_j = (\theta_0,\theta_1, \theta_2,..., \theta_n)$ values.
 
-<div align = "justify">To do this, we need the partial derivatives of the cost function wrt each $\theta_j$ value.
-Note that the second part of our cost function sums from i = 1 to n. So we'll have a different equation for $\theta_0$ and $(\theta_1, \theta_2,..., \theta_n)$</div>
+<div align = "justify">To do this, we need the partial derivatives of the cost function with respect to each $\theta_j$ value.</div>
+<div align = "justify">Note that the second part of our cost function sums from i = 1 to n. So we'll have a different equation for $\theta_0$ and $(\theta_1, \theta_2,..., \theta_n)$</div><br>
 
-$$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$
-$$\theta_0 := \theta_0 - \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_0^{(i)}$$
+$$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$<br>
+$$\theta_0 := \theta_0 - \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_0^{(i)}$$<br>
 $$\theta_j := \theta_j (1 - \alpha\frac{\lambda}{m})- \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_j^{(i)}$$
 
 
@@ -140,10 +140,7 @@ def gradient_descent(X_train, y_train, init0s):
   return init0s
 ```
 
-
-```python
-
-```
+<br>
 
 <div align = "justify">To implement One-vs-All classification, we have to iterate over each class and replace with 1's and 0's.
 1 for the chosen class and 0 for others</div>
@@ -201,10 +198,7 @@ def accuracy_score(prediction, actual):
 
 ```
 
-
-```python
-
-```
+<br>
 
 Let's test our model on a dataset
 
@@ -299,8 +293,6 @@ print(digits["images"].shape)
 n_samples = len(digits["images"])
 data = digits["images"].reshape((n_samples, -1))
 print(data.shape)
-
-
 ```
 
     (1797, 8, 8)
