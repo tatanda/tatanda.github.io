@@ -11,6 +11,7 @@ classes: wide
 
 ---
 
+
 <div align = "justify"> Logistic Regression is a key Classification Machine Learning model  that helps to predict a discrete variable given one or more independent variables. Classification entails assigning a class to each sample based on the learned parameters. </div>
 
 A real life example is; <br>
@@ -53,19 +54,6 @@ Gradient Descent is used to arive at the optimal parameters $\theta_j = (\theta_
 
 
 
-
-
-
-
-
-
-
-```python
- $$Y = h_{(\theta)}(g(X))$$
-```
-
-
-
 A general overview of the process
 - Import required libraries
 - Develop model using both Gradient Descent
@@ -82,8 +70,9 @@ from matplotlib import pyplot as plt
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 ```
-
-We need a cost function that gives a cost of zero if our model $h_{(\theta)}(X)$ prediction equals $Y$ and gives a cost that ranges to infinity if our model $h_{(\theta)}(X)$ prediction is unequal to the actual $Y$ value.
+<
+We need a cost function that gives a cost of zero if our model $h_{(\theta)}(X)$
+prediction equals $Y$ and gives a cost that ranges to infinity if our model $h_{(\theta)}(X)$ prediction is unequal to the actual $Y$ value.
 A problem that may arise with logistic regression is overfitting. This is when our logistic model predicts well on the training dataset but is unable to perfom well on previously unseen data. This result when there are many features. With regularization, our goal here is to determine the best decision boundary and also avoid overfitting. To do this we'll add a regularization parameter that helps to control the tradeoff between our two different goals.
 
 Such cost function is stated as;

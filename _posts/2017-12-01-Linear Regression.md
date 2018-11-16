@@ -75,7 +75,6 @@ m = Number of Samples
 <br>
 
 
-
 ```python
 def cost_function(X, y, init0s): #Returns the cost value given the theta values.
   m = len(X) #m is the length of X i.e the number of samples
