@@ -21,7 +21,7 @@ Parametric learning entails finding the optimal parameter values that fits the l
 
 The Linear Regression is specified as;
 
- $$h_{(\theta)}(X) = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n$$
+ $$h_{(\theta)}(X) = \theta_0X_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n = \theta^TX \text {  (using vectorized implementation)}$$
  where $X_0 = 1$
  and;<br>
  $(\theta_0, \theta_1, \theta_2,..., \theta_n)$ are the optimized thetas, <br>
@@ -64,15 +64,16 @@ from sklearn.metrics import mean_squared_error
 <div align = "justify"> Optimization processes entail one of two things. Either maximize payoff or minimize cost.
 
 Gradient Descent is a general process used to minimize several functions including the cost function. It works by
-initializing the parameter values, calculate the partial derivatives of cost function with respect to the parameters, subtract a
+initializing the parameter values (with zero values), calculating the partial derivatives of cost function with respect to the parameters, subtracting a
 scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes cost function converge at a global minimum.</div>
 
 <div align = "justify"> To compute optimized parameter values using Gradient Descent, we have to minimize the cost function. In statistics, there are several cost function but the one we'd use is the Squared Error Function which is specified as;</div>
 
 $$J_{(\theta)} = \frac{1}{2m} \sum_{i=1}^m (h_{(\theta)}(X^{(i)}) - Y^{(i)})^2$$
+$$\theta_j := \theta_j - \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_j^{(i)}$$
+m = Number of Samples
+<br>
 
-
-<div align = "justify"> Since we don't know what the optimized $\theta$ values are, we have to initialize theta values by giving them a value of zeros</div>
 
 
 ```python
@@ -190,8 +191,7 @@ X_train, X_test, y_train, y_test = preprocess_data(data)
 
 *Plot the Cost values*
 
-<div align = "justify"> To check that our gradient descent theta values are actually optimized, we have to plot the
-cost values to check for convergence</div>
+<div align = "justify"> To check that our gradient descent theta values are actually optimized, we have to plot the cost values to check for convergence</div>
 
 
 ```python
@@ -216,6 +216,8 @@ plt.plot(x,y)
 
 ![png](/images/Developing a Linear Regression Model/cost converge.png)
 
+<div align = "justify">The cost values fall for each 100 iterations until it converges at a value close to zero.</div>
+
 
 *Optimal Theta Values*
 
@@ -229,8 +231,8 @@ gradient_descent(X_train, y_train, init0s)[0]
 
     array([ 0.19357013, 32.19125678, 86.08455637])
 
- So our multivariable linear regression model is; <br>
- $Y$ = 0.19357013$X_0$ + 32.19125678$X_1$ + 86.08455637$X_2$
+ So our multivariable linear regression prediction model is; <br>
+ $h_{(\theta)}(X)$ = 0.19357013$X_0$ + 32.19125678$X_1$ + 86.08455637$X_2$
 
 *Compare our model's RMSE with Sklearn's*
 
@@ -286,8 +288,8 @@ where $\theta_j = (X^TX)^{-1}X^TY$
 ```python
 def normal_equation(X, y):
   xtrans = np.transpose(X)
-  inv = np.linalg.pinv(np.dot(xtrans, X)) #use pinv for nonivertible singular matrices
-  and use inv for normal invertible matrices
+  inv = np.linalg.pinv(np.dot(xtrans, X))
+  #use pinv for nonivertible singular matrices and use inv for normal invertible matrices
   optimal0s = np.dot(np.dot(inv, xtrans), y)
   return optimal0s
 normal_equation(X_train, y_train)
