@@ -1,8 +1,8 @@
 ---
 title: "Developing a Linear Regression Algorithm"
 data: 2017-12-20
-tags: [Linear_Regression]
-layout: collection
+tags: [Linear Regression]
+layout: single
 header:
   #image: "/assets/images/optics.jpg"
   teaser: /assets/images/cost converge.png
