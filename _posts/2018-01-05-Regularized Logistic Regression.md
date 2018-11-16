@@ -472,9 +472,6 @@ accuracy_score(prediction, y_test)
 
 
 
-```python
-
-```
 
 *Compare With Sklearn's Logistic Regression Module*
 
@@ -498,7 +495,14 @@ accuracy_score(y_test, lr.predict(X_test))
 Let's check the performance of our model visually.
 To do this, we have to remove the $X_0$ (1) values and reshape to shape (n_samples, 8, 8)
 
+```python
+X_test_reshaped = X_test[:,1:].reshape(len(X_test), 8, 8)
+X_test_reshaped.shape
 
+```
+
+
+    (594, 8, 8)
 
 
 
