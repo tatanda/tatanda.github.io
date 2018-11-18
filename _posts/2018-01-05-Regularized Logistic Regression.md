@@ -81,7 +81,7 @@ A problem that may arise with logistic regression is overfitting. This is when o
 Such cost function is stated as;
 
 
-$$J_{(\theta)} = \frac{1}{m} [\sum_{i=1}^m Y^{(i)}log h_{(\theta)}(X^{(i)}) +(1-Y^{(i)}) log (1 - h_{(\theta)}(X^{(i)}))  ] + \lambda \sum_{i=1}^n\theta_j ^2$$
+$$J_{(\theta)} = \frac{1}{m} [\sum_{i=1}^m Y^{(i)}log h_{(\theta)}(X^{(i)}) +(1-Y^{(i)}) log (1 - h_{(\theta)}(X^{(i)}))  ] + \lambda \sum_{j=1}^n\theta_j ^2$$
 
 m = Number of Samples
 
@@ -107,8 +107,10 @@ The goal is to Minimize $J_{(\theta)}$ to output optimized $\theta_j = (\theta_0
 <div align = "justify">To do this, we need the partial derivatives of the cost function with respect to each $\theta_j$ value.</div>
 <div align = "justify">Note that the second part of our cost function sums from i = 1 to n. So we'll have a different equation for $\theta_0$ and $(\theta_1, \theta_2,..., \theta_n)$</div><br>
 
-$$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$<br>
-$$\theta_0 := \theta_0 - \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_0^{(i)}$$<br>
+$$\theta_j := \theta_j - \alpha \frac{\delta J(\theta_0, \theta_1,...,\theta_n)}{\delta\theta_j}$$
+<br>
+$$\theta_0 := \theta_0 - \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_0^{(i)}$$
+<br>
 $$\theta_j := \theta_j (1 - \alpha\frac{\lambda}{m})- \alpha  \frac {1}{m}\sum_{i=1}^m(h_{(\theta)}(X^{(i)}) - Y^{(i)}))X_j^{(i)}$$
 
 
@@ -123,10 +125,6 @@ def partial(X_train, y_train, init0s):
   update0 = np.asarray(init0s[0] - (alpha/m)*np.dot(diff.transpose(), X_train[:,0]))
   updatej = init0s[1:]*(1 - alpha*(lambdaa/m)) - (alpha/m)*np.dot(diff.transpose(), X_train[:,1:])
   return  np.concatenate([np.expand_dims(update0, axis=0), updatej], axis = 0)
-
-
-
-
 ```
 
 <div align = "justify">We need to keep calculating the partial derivatives of cost function with respect to the parameters, subtract a scaled value of the partial derivative from the initial parameter until we arrive at the parameter values that makes cost function converge at a global minimum. Once the cost converges at minimum, the theta values will remain constant.</div>
@@ -163,7 +161,7 @@ def multiClassThetas(X_train, y_train, init0s):
   #where k is the number of classes and n is number of features
   y_copy = y_train.copy()
   thetas_list = []
-  for i in set(y_train):
+  for i in np.unique(y_train):
     copy = y_train.copy()
     y_copy = oneVsAll(copy, i) #Seperate target into 0s and 1s
     class_thetas = gradient_descent(X_train, y_copy, init0s)
@@ -186,7 +184,7 @@ def p_values(thetas, X_train, y_train):
 
 
 
-def predict(p_values, y_test):
+def predict(p_values):
   #Returns predictions
   prediction = np.argmax(p_values, axis = 0)
   return prediction
