@@ -458,7 +458,7 @@ predict(prob, y_test)
 
 
 ```python
-prediction = predict(prob, y_test)
+prediction = predict(prob)
 accuracy_score(prediction, y_test)
 ```
 
